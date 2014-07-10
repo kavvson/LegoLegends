@@ -1,7 +1,7 @@
 # LegoLegends
 ![alt text](http://leagueofmusic.com/legolegends/assets/img/ad38.png "LegoLegends")
 
-#Live preview [http://leagueofmusic.com/legolegends/]
+###Live preview http://leagueofmusic.com/legolegends/
 NAME : LegoLegends - API Profiler
 VERSION: 1.00
 DESCRIPTION: TBD
