@@ -1,0 +1,75 @@
+Time : 20:05:15
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 20:04:33
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 20:03:31
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 19:59:21
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 19:58:44
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 19:57:40
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 19:56:04
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 15:49:16
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'leagueofprofile.persons' doesn't exist
+Raw SQL : DELETE FROM Persons WHERE id = :id
+
+Time : 15:47:59
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 15:34:36
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 15:33:06
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:31:10
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:30:53
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:30:44
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:30:33
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:30:23
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:30:23
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:30:09
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) 	VALUES(:id,:n,:l,:image)
+
+Time : 15:28:02
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE summoners SET id = :id,name = :n,level = :l,image =:image WHERE id = :id
