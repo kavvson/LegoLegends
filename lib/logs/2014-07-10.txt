@@ -1,3 +1,15 @@
+Time : 16:38:26
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '24183548' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)
+
+Time : 16:12:32
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)
+
+Time : 16:10:44
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)
+
 Time : 14:05:47
 SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '32686250' for key 'PRIMARY'
 Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)

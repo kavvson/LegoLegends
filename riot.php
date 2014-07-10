@@ -329,6 +329,21 @@
 			return FALSE;
 		}
 		
+		
+		function timeDiff($firstTime,$lastTime)
+		{
+
+		// convert to unix timestamps
+		$firstTime=strtotime($firstTime);
+		$lastTime=strtotime($lastTime);
+
+		// perform subtraction to get the difference (in seconds) between times
+		$timeDiff=$lastTime-$firstTime;
+
+		// return the difference
+		return $timeDiff;
+		}
+
 		/**	ddGetNfo();
 		 */
 		public function ddGetNfo($region=NULL, $justResponse=FALSE) {
@@ -359,7 +374,6 @@
 		
 		/*	Methods:Private:Utility	*/
 		private function formatResult($ch, $response) {
-			$curlNfo = curl_getinfo($ch);
 			$errCode = curl_errno($ch);
 			
 			if ($errCode) {
@@ -367,7 +381,6 @@
 				$result = array(
 					'status' => self::FAIL,
 					'code' => $errCode,
-					'curlNfo' => $curlNfo,
 					'msg' => $errMsg
 				);
 			}
@@ -380,7 +393,6 @@
 					$result = array(
 						'status' => self::FAIL,
 						'code' => $errCode,
-						'curlNfo' => $curlNfo,
 						'msg' => $errMsg
 					);
 				}
@@ -389,7 +401,6 @@
 					
 					$result = array(
 						'status' => self::SUCCESS,
-						//'curlNfo' => $curlNfo,
 						'response' => $araResponse
 					);
 					
@@ -398,7 +409,6 @@
 							$result = array(
 								'status' => self::FAIL,
 								'code' => $araResponse['status']['status_code'],
-								'curlNfo' => $curlNfo,
 								'msg' => $araResponse['status']['message']
 							);
 						}
