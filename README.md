@@ -29,5 +29,6 @@ DESCRIPTION: TBD
 - Improve the code might be messy
 - To many if's in ajax file
 - Not sure if multi cache works
+- Timer is not activated while first submit
 
 If you got any other issues try to delete caches and sql record
