@@ -1,27 +1,28 @@
 # LegoLegends
 ![alt text](http://leagueofmusic.com/legolegends/assets/img/ad38.png "LegoLegends")
 
-*NAME : LegoLegends - API Profiler
+#Live preview [http://leagueofmusic.com/legolegends/]
+NAME : LegoLegends - API Profiler
 VERSION: 1.00
-DESCRIPTION: TBD*
+DESCRIPTION: TBD
 
 # Installation
 
-Copy all the files in a prefered directory
+-Copy all the files in a prefered directory
  
-Go to lib/settings.ini.php to set your connection
+-Go to lib/settings.ini.php to set your connection
 
-*
+
 	[SQL]
 	host = localhost
 	user = root
 	password = 
 	dbname = leagueofprofile
-*
 
-Import the summoners.sql
 
-Lunch the site
+-Import the summoners.sql
+
+-Lunch the site
 
 # Known bugs :
 - Data stored in cache isn't the same as the data retrived from 
