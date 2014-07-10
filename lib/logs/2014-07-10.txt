@@ -1,0 +1,39 @@
+Time : 14:05:47
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '32686250' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)
+
+Time : 14:04:41
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '19953246' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)
+
+Time : 14:04:04
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '19953246' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)
+
+Time : 14:03:10
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '19953246' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)
+
+Time : 14:00:08
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image)
+
+Time : 13:59:30
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image)
+
+Time : 13:58:54
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image)
+
+Time : 13:58:35
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 13:55:57
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)
+
+Time : 13:46:01
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+Raw SQL : INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)

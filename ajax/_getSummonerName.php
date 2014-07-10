@@ -13,83 +13,55 @@ require_once '../riot.php';
 
 if (isset($_POST['name']) and isset($_POST['reg']) and !empty($_POST['name']) and !empty($_POST['reg']))
 	{
-	unset($_POST);
-	empty($_POST);
+	//unset($_POST);
+	//empty($_POST);
 	$expiretime = 33;
-	$timeexpires = date("m/d/Y h:i:s a", time() + $expiretime);
+	
 	$timenow = date("m/d/Y h:i:s a", time());
 	$name = $_POST['name'];
 	$name = strtolower(preg_replace('/\s+/', '', $name));
 	$reg = strtolower($_POST['reg']);
 
-	// setup 'default' cache
 
-	$c = new Cache(array(
-		'path' => '../cache/sbn/',
-		'extension' => '.cache'
-	) , $name);
+
 	require("../lib/Db.class.php");
-	// store a string
-		    $db = new Db();
-			$person 	 =     $db->query("SELECT * FROM summoners");
-			
-
 	
-$trycache = $c->retrieve($name);
+    $db = new Db();
+	$lolAPI = new lolAPI();
+	
+	$lolAPI->getRegion($reg);
+	$champs1 = $lolAPI->summoner($name,'by-name', NULL, $reg);
+	
+	if($champs1["status"] == "SUCCESS"){
 
-
-			$selector = $db->single("SELECT id FROM summoners WHERE id = :id ", array('id' => $trycache[1][strtolower($name)]["id"] ));
-			
-			
-			$profileimage = $trycache[1][strtolower($name)]["profileIconId"];
-			$summname = $trycache[1][strtolower($name)]["name"];
-			$slevel = $trycache[1][strtolower($name)]["summonerLevel"];
-			$summid = $trycache[1][strtolower($name)]["id"];
-			$lolAPI = new lolAPI();
-$lolAPI->getRegion('eune');
-$champs1 = $lolAPI->summoner($name,'by-name', NULL, $reg);
-
-
-if ($c->isCached($name)){
-echo '<br><br>====================================================================';
-echo '<br>DEBUGGER ';
-echo '<br>====================================================================';
-echo "<pre>";
-var_dump($champs1["response"][$name]);
-echo "</pre>";
-if ($c->isExpired($name) == TRUE)
-			{
-			$c->store($name, array(
-				$timeexpires,
-				$c->call_riot("https://$reg.api.pvp.net/api/lol/$reg/v1.4/summoner/by-name/$name?api_key=10c9ecfe-a983-4e2a-aa69-035a78fb28f8")
-			) , $expiretime);
-			if ($selector > 0){
-					//does exist need to update
-						$delete	  =  $db->query("DELETE FROM summoners WHERE id = :id",array("id"=>$summid)); 				 
-						$insert	 	=  $db->query("INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)",array("id"=>$summid,"n"=>$summname,"l"=>$slevel,"image"=>$profileimage));
-						echo "Cache : expired<br>Performing database update record : ".$summid ."";
-					}else{
-					//need to create a summoner
-						$insert	 	=  $db->query("INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)",array("id"=>$summid,"n"=>$summname,"l"=>$slevel,"image"=>$profileimage));
-						echo "<br>Performing database insert record : ".$summid."";
-			}
-			}elseif ($c->isExpired($name) == FALSE){
-				echo '<br>Chache didn\'t expired yet - no action to take ';
-			}
-}else{
-echo '<br>isnt soo lets add it';
-$c->store($name, array(
-				$timeexpires,
-				$c->call_riot("https://$reg.api.pvp.net/api/lol/$reg/v1.4/summoner/by-name/$name?api_key=10c9ecfe-a983-4e2a-aa69-035a78fb28f8")
-			) , $expiretime);
-}
-echo '<br>====================================================================';
-
-
-
-	$result = $c->retrieve($name);
-
-
+		$setExpire = date("m/d/Y h:i:s a", time() + $expiretime);
+		$getID = $champs1["response"][$name]["id"];
+		$getName = $champs1["response"][$name]["name"];
+		$getLevel = $champs1["response"][$name]["summonerLevel"];
+		$getImage = $champs1["response"][$name]["profileIconId"];
+		$summonerLookup 	 =     $db->query("SELECT * FROM summoners WHERE id=:id",array("id"=>$getID));
+		var_dump($summonerLookup);
+		if($summonerLookup[0]["id"] != $getID){
+			echo "Summoner is not in databse!";
+			//so lets add him
+			$insert	 	=  $db->query("INSERT INTO summoners(id,name,level,image,expiredate) VALUES(:id,:n,:l,:image,:expiredate)",array("id"=>$getID,"n"=>$getName,"l"=>$getLevel,"image"=>$getImage,"expiredate"=>$setExpire));
+			if($insert > 0){
+				echo "added";
+			 }else{
+				echo "error";
+			 }
+		}else{
+			//update
+			//$insert	 	=  $db->query("INSERT INTO summoners(id,name,level,image) VALUES(:id,:n,:l,:image)",array("id"=>$summid,"n"=>$summname,"l"=>$slevel,"image"=>$profileimage));
+		}
+		//
+		//var_dump($champs1);
+	}else{
+		//failed to connect
+		echo $champs1["status"];
+	
+	}
+	
 ?>
 
    
