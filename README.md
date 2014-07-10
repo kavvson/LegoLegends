@@ -28,3 +28,5 @@ Lunch the site
 - Improve the code might be messy
 - To many if's in ajax file
 - Not sure if multi cache works
+
+If you got any other issues try to delete caches and sql record

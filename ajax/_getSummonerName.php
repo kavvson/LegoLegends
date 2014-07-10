@@ -83,8 +83,9 @@ $champs1 = $lolAPI->summoner($name,'by-name', NULL, $reg);
 			}else{
 				echo "<br>[[Performing record update :: No actions to take]]";
 			}
+		}else{
+				echo "<br>[[Loaded from cache {teemo}:: No actions to take]]";
 		}
-		
 	}else{
 		$champs1 = $lolAPI->summoner($name,'by-name', NULL, $reg);
 		
